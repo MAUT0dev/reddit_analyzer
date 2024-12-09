@@ -1,10 +1,13 @@
 # run_collector.py
+import sys
+import os
 import argparse
 import logging
 from datetime import datetime, timedelta
 from src.config import Config
 from src.collector.reddit import RedditCollector
 from src.db.handler import DatabaseHandler
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
 
 def setup_logging():
    logging.basicConfig(
