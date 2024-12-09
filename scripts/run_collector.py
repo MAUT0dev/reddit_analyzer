@@ -6,9 +6,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 import argparse
 import logging
 from datetime import datetime, timedelta
-from src.config import Config
-from src.collector.reddit import RedditCollector
-from src.db.handler import DatabaseHandler
+from reddit_analyzer.src.config import Config
+from reddit_analyzer.src.collector.reddit import RedditCollector
+from reddit_analyzer.src.db.handler import DatabaseHandler
 
 def setup_logging():
    logging.basicConfig(
