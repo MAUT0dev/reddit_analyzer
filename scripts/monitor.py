@@ -1,8 +1,8 @@
 # monitor.py
 import logging
 from datetime import datetime, timedelta
-from src.config import Config
-from src.db.handler import DatabaseHandler
+from reddit_analyzer.src.config import Config
+from reddit_analyzer.src.db.handler import DatabaseHandler
 
 def monitor_collectors():
    """Monitor active collectors and their progress"""
