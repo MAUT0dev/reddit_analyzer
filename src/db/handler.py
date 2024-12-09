@@ -5,7 +5,7 @@ from psycopg2.extras import execute_batch
 from contextlib import contextmanager
 import logging
 from datetime import datetime
-from reddit_analyzer.src.config import DatabaseConfig
+from ..config import DatabaseConfig
 
 class DatabaseHandler:
    def __init__(self, config: DatabaseConfig):

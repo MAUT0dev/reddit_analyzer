@@ -47,6 +47,19 @@ CREATE TABLE IF NOT EXISTS collection_progress (
     UNIQUE(subreddit_name, worker_id)
 );
 
+CREATE TABLE IF NOT EXISTS content_sentiment (
+    id SERIAL PRIMARY KEY,
+    content_id VARCHAR(50) NOT NULL,
+    content_type VARCHAR(10) NOT NULL,
+    compound_score FLOAT NOT NULL,
+    positive_score FLOAT NOT NULL,
+    neutral_score FLOAT NOT NULL,
+    negative_score FLOAT NOT NULL,
+    processed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(content_id, content_type)
+);
+
 CREATE INDEX idx_posts_created_utc ON posts(created_utc);
 CREATE INDEX idx_comments_post_id ON comments(post_id);
 CREATE INDEX idx_collection_progress_worker ON collection_progress(worker_id);
+CREATE INDEX idx_content_sentiment_content ON content_sentiment(content_id, content_type);
