@@ -2,12 +2,7 @@
 import argparse
 import logging
 import time
-import sys
-import os
 from datetime import datetime
-
-# Add parent directory to Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from src.config import Config
 from src.db.handler import DatabaseHandler
