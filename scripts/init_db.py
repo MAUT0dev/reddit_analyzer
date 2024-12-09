@@ -11,8 +11,9 @@ def init_db():
     conn = psycopg2.connect(
         host=os.getenv('DB_HOST', 'localhost'),
         port=os.getenv('DB_PORT', '5432'),
-        user=os.getenv('DB_USER', 'mm'),  # Using mm as default user
-        password=os.getenv('DB_PASSWORD', '')
+        user=os.getenv('DB_USER', 'mm'),
+        password=os.getenv('DB_PASSWORD', ''),
+        dbname='postgres'  # Connect to postgres database initially
     )
     conn.autocommit = True
     
@@ -35,7 +36,7 @@ def init_db():
             host=os.getenv('DB_HOST', 'localhost'),
             port=os.getenv('DB_PORT', '5432'),
             dbname='reddit_analyzer',
-            user=os.getenv('DB_USER', 'mm'),  # Using mm as default user
+            user=os.getenv('DB_USER', 'mm'),
             password=os.getenv('DB_PASSWORD', '')
         )
         conn.autocommit = True
